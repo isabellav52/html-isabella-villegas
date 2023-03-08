@@ -48,3 +48,16 @@ function crearTablero () {
     carta.setAttribute('data-id', i);
     carta.addEventlistener(`click`, voltearCarta);
     cuadricula.appendChild(carta);
+
+    //--------lecture04----------------------//
+    function voltearcarta() {
+      var cardId = this.getAttribute ("data-id");
+      cartasEscogidas.push (cardAdj[cardId].name) ;
+      cartasEscogidasId.push (cardId);
+      this.setAttribute ("src", cardAdj[cardId].img);
+      if (cartasEscogidas.length === 2) {
+        setTimeout (verificarPareja, 1000); 
+      }
+    } 
+        crearTablero0();
+  });
