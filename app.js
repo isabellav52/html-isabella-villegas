@@ -56,22 +56,22 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function verificarPareja() {
-    var cards = document.querySelectorAll("img");
+    var cards = document.querySelectorAll("imgenes");
     const opcionUnoId = cartasEscogidasId[0];
     const opcionDosId = cartasEscogidasId[1];
     if (opcionUnoId === opcionDosId) {
-      cards[opcionUnoId].setAttribute("src", "imges/reverso.png");
-      cards[opcionDosId].setAttribute("src", "imges/reverso.png");
+      cards[opcionUnoId].setAttribute("src", "imgenes/reverso.png");
+      cards[opcionDosId].setAttribute("src", "imgenes/reverso.png");
       alert("¡Diste click a la misma imagen!");
     } else if (cartasEscogidas[0] === cartasEscogidas[1]) {
-      cards[opcionUnoId].setAttribute("src", "imges/blank.png");
-      cards[opcionDosId].setAttribute("src", "imges/blank.png");
+      cards[opcionUnoId].setAttribute("src", "imgenes/blank.png");
+      cards[opcionDosId].setAttribute("src", "imgenes/blank.png");
       cards[opcionUnoId].removeEventListener("click", voltearCarta);
       cards[opcionDosId].removeEventListener("click", voltearCarta);
       cartasGanadas.push(cartasEscogidas);
     } else {
-      cards[opcionUnoId].setAttribute("src", "imges/reverso.png");
-      cards[opcionDosId].setAttribute("src", "imges/reverso.png");
+      cards[opcionUnoId].setAttribute("src", "imgenes/reverso.png");
+      cards[opcionDosId].setAttribute("src", "imgenes/reverso.png");
       alert("¡Intenta de nuevo!");
     }
     cartasEscogidas = [];
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     resultado.textContent = cartasGanadas.length;
 
-    if (cartasGanadas.length === cardAdj.length / 2) {
+    if (cartasGanadas.length === cardsAdj.length / 2) {
       resultado.textContent = "¡Felicidades, encontraste todos los pares!";
     }
 
@@ -93,6 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(verificarPareja, 1500);
     }
   }
-
   crearTablero();
 });
+
